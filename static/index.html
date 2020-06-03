@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Semantic-UI-Forest, collection of design, themes and templates for Semantic-UI."
+    />
+    <meta name="keywords" content="Semantic-UI, Theme, Design, Template" />
+    <meta name="author" content="PPType" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>LDA Topic Modelling Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      type="text/css"
+    />
+    <style type="text/css">
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: grayscale;
+      }
+
+      .ui.center.aligned.container {
+        margin-top: 4em;
+      }
+
+      p.lead {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 1.3em;
+        color: #333333;
+        line-height: 1.4;
+        font-weight: 300;
+      }
+
+      .ui.huge.header {
+        font-size: 36px;
+      }
+
+      .ui.inverted.menu {
+        border-radius: 0;
+        flex-wrap: wrap;
+        border: none;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .ui.mobile.only.grid .ui.menu .ui.vertical.menu {
+        display: none;
+      }
+
+      .ui.inverted.menu .item {
+        color: rgb(157, 157, 157);
+        font-size: 16px;
+      }
+
+      .ui.inverted.menu .active.item {
+        background-color: #080808;
+      }
+
+      .ui.center.aligned.container {
+
+        margin-bottom: 85px;
+      }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #f5f5f5;
+        margin-bottom: 0;
+      }
+
+      .ui.medium.image,
+      .ui.medium.images .image,
+      .ui.medium.images img,
+      .ui.medium.images svg {
+        margin: 0 auto;
+      }
+
+      .ui.styled.accordion {
+        width: 100%;
+      }
+
+      .ui.card {
+        margin: 1em 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body id="root">
+    <div class="ui tablet computer only padded grid">
+      <div class="ui borderless fluid huge inverted menu">
+        <div class="ui container">
+          <a class="header item" href="#root">LDA Demo</a>
+          <a class="active item" href="#root">Home</a>
+        </div>
+      </div>
+    </div>
+    <div class="ui mobile only padded grid">
+      <div class="ui borderless fluid huge inverted menu">
+        <a class="header item" href="#root">LDA Demo</a>
+        <div class="right menu">
+          <div class="item">
+            <button class="ui icon toggle basic inverted button">
+              <i class="content icon"></i>
+            </button>
+          </div>
+        </div>
+        <div class="ui vertical borderless fluid inverted menu">
+          <a class="active item" href="#root">Home</a>
+        </div>
+      </div>
+    </div>
+    <div class="ui center aligned text container">
+      <h1 class="ui huge header">LDA Demo</h1>
+      <p class="lead">
+        This is a demo to show off the LDA Topic Modelling extention
+      </p>
+      <p class="lead">
+        Upload a json file containing words to see the module in action :)
+      </p>
+      <img class="ui medium rounded image center" src="/static/chessa.jpg" />
+      <div class="ui segment">
+        <h3 class="ui right floated header">Input File Here</h3>
+        <div class="ui clearing divider"></div>
+        <input type="file" id="file-selector" />
+        <p></p>
+      </div>
+      <h4 class="ui horizontal divider header">
+        <i class="bar chart icon"></i>
+        Results
+      </h4>
+      <div class="ui styled accordion" id="topicContainer"></div>
+      <div class="ui styled accordion">
+        <div class="title">
+          <i class="dropdown icon"></i>
+          <p class="topic-title">
+            Vocab List
+          </p>
+        </div>
+        <div class="content">
+          <div class="ui middle aligned divided list" id="vocabContainer"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="ui container"><p>Developed by Sean Mowrey.</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+      integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js"></script>
+    <script src="static/index.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".menu .item").tab();
+        $(".ui.accordion").accordion();
+        $(".ui.dropdown").dropdown();
+        $(".ui.toggle.button").click(function () {
+          $(".mobile.only.grid .ui.vertical.menu").toggle(100);
+        });
+      });
+    </script>
+  </body>
+</html>

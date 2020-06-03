@@ -1,0 +1,25 @@
+{
+  "name": "lda-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "expand-contractions": "^1.0.1",
+    "iso-639-1": "^2.1.0",
+    "lda-topic-model": "^1.0.0",
+    "node-nlp": "git+https://github.com/seanmowz/nlp.js.git",
+    "natural": "^0.6.3",
+    "node-snowball": "^0.4.0",
+    "retext": "^6.0.2",
+    "retext-keywords": "^4.0.3"
+  }
+}
